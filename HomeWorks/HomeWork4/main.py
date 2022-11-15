@@ -94,13 +94,13 @@ def get_clusterized_matrix(matrix, number_of_clusters):
     return matrix_copy
 
 
-matrix = init_weight_matrix(10)
+matrix = init_weight_matrix(5)
 graph = build_graph(matrix)
 draw_graph(graph)
 min_ostov_tree_matrix = get_min_ostov_tree(matrix)
 min_ostov_graph = build_graph(min_ostov_tree_matrix)
 draw_graph(min_ostov_graph)
-clusterized_matrix = get_clusterized_matrix(min_ostov_tree_matrix, 4)
+clusterized_matrix = get_clusterized_matrix(min_ostov_tree_matrix, 3)
 clusterized_graph = build_graph(clusterized_matrix)
 draw_graph(clusterized_graph)
 
