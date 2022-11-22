@@ -4,7 +4,7 @@ import sys
 import sklearn.svm
 import math
 
-sc = pg.display.set_mode((800, 600))
+sc = pg.display.set_mode((600, 600))
 sc.fill('white')
 pg.display.update()
 
@@ -31,6 +31,11 @@ def fit_svm(points):
 
 points = []
 line_data = (0, 0, 0)
+
+
+def count_x_for_line(line_data, y):
+    return (-line_data[2] - line_data[1] * y) / line_data[0]
+
 
 while True:
     for i in pg.event.get():
@@ -60,10 +65,15 @@ while True:
         elif i.type == pygame.KEYDOWN:
             if i.key == pygame.K_RETURN:
                 line_data = fit_svm(points)
-                #y = -599
-                x1 = (-599 + line_data[2] / line_data[1]) / (-line_data[0]/line_data[1])
-                x2 = (0 + line_data[2] / line_data[1]) / (-line_data[0] / line_data[1])
-                pg.draw.line(sc, 'black', (math.fabs(x1), 599), (math.fabs(x2), 0))
+                # for y in range(600):
+                #     x = count_x_for_line(line_data, -y)
+                #     point = Point(x, y, 0, 'black')
+                #     display_point(point)
+                x1 = count_x_for_line(line_data, -599)
+                x2 = count_x_for_line(line_data, 0)
+                pg.draw.line(sc, 'black', (x1, 599), (x2, 0))
+
+
                 pg.display.update()
 
 
