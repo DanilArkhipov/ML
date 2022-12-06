@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {}
+    "C:\\Repository\\ML\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {}
   },
   "projects": {
-    "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {
+    "C:\\Repository\\ML\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
+        "projectUniqueName": "C:\\Repository\\ML\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
         "projectName": "GeneticAlgorithm",
-        "projectPath": "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
+        "projectPath": "C:\\Repository\\ML\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
         "packagesPath": "C:\\Users\\strel\\.nuget\\packages\\",
-        "outputPath": "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\obj\\",
+        "outputPath": "C:\\Repository\\ML\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

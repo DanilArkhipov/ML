@@ -1,6 +1,6 @@
 ﻿@model TspModel
 @{
-	ViewData["Title"] = "Travelling salesman problem";
+    ViewData["Title"] = "Задача коммивояжера ГА";
 }
 
 <style>
@@ -34,9 +34,9 @@
 <div id="container"></div>
 @using (Html.BeginForm("Index", "GeneticAlgorithm", FormMethod.Post, new { id = "tspStart" }))
 {
-	<script src="https://mapgl.2gis.com/api/js/v1"></script>
-	<script src="https://unpkg.com/%402gis/mapgl-directions%40%5e2/dist/directions.js"></script>
-	<script>
+    <script src="https://mapgl.2gis.com/api/js/v1"></script>
+    <script src="https://unpkg.com/%402gis/mapgl-directions%40%5e2/dist/directions.js"></script>
+    <script>
 		const map = new mapgl.Map('container', {
 			center: [parseFloat(@Model.CenterX), parseFloat(@Model.CenterY)],
 			zoom: parseInt(@Model.Zoom),
@@ -46,42 +46,34 @@
 		const points = JSON.parse('@Html.Raw(Model.Points)');
 
 		let drew = false;
-		const buttonText = ['Choose nine points on the map', 'Reset points'];
-		const controlsHtml = `<button id="reset" disabled>${buttonText[0]}</button> `;
+		const buttonText = ['Построить маршрут'];
+		const controlsHtml = `<button id="reset">${buttonText[0]}</button> `;
 		new mapgl.Control(map, controlsHtml, {
-			position: 'topLeft',
+			position: 'bottomLeft',
 		});
 
 		const resetButton = document.getElementById('reset');
+		resetButton.disabled = false;
 
 		resetButton.addEventListener('click', function () {
-			document.getElementById("resetSubmiter").click();
+			document.getElementById("tspCenterX").value = map.getCenter()[0];
+            document.getElementById("tspCenterY").value = map.getCenter()[1];
+            document.getElementById("tspZoom").value = map.getZoom();
+            document.getElementById("tspShowRoad").value = "true";
+            document.getElementById("tspPoints").value = points;
+            document.getElementById("tspSubmiter").click();
 		});
 
 		map.on('click', (e) => {
 			const coords = e.lngLat;
-			if (points.length < 9) {
-				markers.push(
-					new mapgl.Marker(map, {
-						coordinates: coords,
-						icon: 'https://docs.2gis.com/img/dotMarker.svg',
-					})
-				);
-
-				points.push(coords);
-			}
-
-			if (points.length == 9) {
-				if ('@Model.ShowRoad' != 'true') {
-					document.getElementById("tspCenterX").value = map.getCenter()[0];
-					document.getElementById("tspCenterY").value = map.getCenter()[1];
-					document.getElementById("tspZoom").value = map.getZoom();
-					document.getElementById("tspShowRoad").value = "true";
-					document.getElementById("tspPoints").value = points;
-
-					document.getElementById("tspSubmiter").click();
-				}
-			}
+			markers.push(
+            	new mapgl.Marker(map, {
+            		coordinates: coords,
+            		icon: 'https://docs.2gis.com/img/dotMarker.svg',
+            	})
+            );
+            
+           	points.push(coords);
 		});
 
 		if ('@Model.ShowRoad' == 'true') {
@@ -95,21 +87,23 @@
 			markers.forEach((m) => {
 				m.destroy();
 			});
-
-			resetButton.disabled = false;
-			resetButton.textContent = buttonText[1];
 		}
 	</script>
 
-	@Html.HiddenFor(m => m.CenterX, new { id = "tspCenterX" });
-	@Html.HiddenFor(m => m.CenterY, new { id = "tspCenterY" });
-	@Html.HiddenFor(m => m.Zoom, new { id = "tspZoom" });
-	@Html.HiddenFor(m => m.ShowRoad, new { id = "tspShowRoad" });
-	@Html.HiddenFor(m => m.Points, new { id = "tspPoints" });
+    @Html.HiddenFor(m => m.CenterX, new { id = "tspCenterX" })
+    ;
+    @Html.HiddenFor(m => m.CenterY, new { id = "tspCenterY" })
+    ;
+    @Html.HiddenFor(m => m.Zoom, new { id = "tspZoom" })
+    ;
+    @Html.HiddenFor(m => m.ShowRoad, new { id = "tspShowRoad" })
+    ;
+    @Html.HiddenFor(m => m.Points, new { id = "tspPoints" })
+    ;
 
-	<input type="submit" id="tspSubmiter" hidden/>
+    <input type="submit" id="tspSubmiter" hidden/>
 }
 @using (Html.BeginForm("Index", "GeneticAlgorithm", FormMethod.Get))
 {
-	<input type="submit" id="resetSubmiter" hidden />
+    <input type="submit" id="resetSubmiter" hidden/>
 }

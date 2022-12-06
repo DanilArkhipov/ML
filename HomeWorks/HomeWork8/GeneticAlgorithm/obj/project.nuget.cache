@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "232DHYZ08Q2t2tvXqlue7fykWBu06GBB4FICffY+A9en1mJX2IB7/HCBLRCEB1khWI4Mf0sDb/yY6qZXhi9fKQ==",
+  "dgSpecHash": "wnMemYpg3+f6erxT+Y3OVGbsXvZjuaCFwBQN1jCz1I6bZNS7Q7nZYjEuS9A5ecbMddJT13ZktmtG3k6n1x4QtQ==",
   "success": true,
-  "projectFilePath": "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
+  "projectFilePath": "C:\\Repository\\ML\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\strel\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
