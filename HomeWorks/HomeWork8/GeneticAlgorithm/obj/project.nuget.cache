@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "232DHYZ08Q2t2tvXqlue7fykWBu06GBB4FICffY+A9en1mJX2IB7/HCBLRCEB1khWI4Mf0sDb/yY6qZXhi9fKQ==",
+  "success": true,
+  "projectFilePath": "C:\\Repository\\MachineLearning\\HomeWorks\\HomeWork8\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\strel\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
